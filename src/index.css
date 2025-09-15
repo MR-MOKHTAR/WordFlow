@@ -32,7 +32,7 @@
   --border-context-light: #d9d9e0;
   --border-context-dark: #3b3d4a;
   --color-hover-light: #e2e8f0;
-  --color-hover-dark: #44475c;
+  --color-hover-dark: #3a3d52;
 
   /* ========= متن ========= */
   --color-header-light: #1e1e1e;
@@ -166,6 +166,25 @@
       opacity: 0;
     }
   }
+
+  /* * Heading */
+
+.ProseMirror h1 {
+  @apply text-3xl font-bold leading-snug mb-4;
+}
+
+.ProseMirror h2 {
+  @apply text-2xl font-semibold leading-snug mb-3;
+}
+
+.ProseMirror h3 {
+  @apply text-xl font-semibold leading-snug mb-2;
+}
+
+.ProseMirror h4 {
+  @apply text-lg font-medium leading-snug mb-2;
+}
+
 }
 
 .editor-scrollbar::-webkit-scrollbar {

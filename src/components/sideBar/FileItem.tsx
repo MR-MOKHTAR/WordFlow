@@ -39,7 +39,7 @@ const FileItem = React.memo(
       <li
         className={`flex-between group relative cursor-pointer py-0.5 px-1 rounded transition-colors duration-150 ${
           isActive
-            ? "bg-[#E2E8F0] dark:bg-[#44475A]/70"
+            ? "bg-[#E2E8F0] dark:bg-hover-dark"
             : "hover:bg-[#e2e8f0] dark:hover:bg-[#44475A]/40"
         }`}
       >

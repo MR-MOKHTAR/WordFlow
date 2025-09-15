@@ -8,6 +8,7 @@ import BulletList from "./BulletList";
 import Bold from "./Bold";
 import Italic from "./Italic";
 import { memo } from "react";
+import Heading from "./Heading";
 
 type propType = {
   cellId: string;
@@ -25,6 +26,7 @@ function CellHeader({ cellId, editor }: propType) {
       <BulletList editor={editor} />
       <Italic editor={editor} />
       <Bold editor={editor} />
+      <Heading editor={editor} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { type Editor } from "@tiptap/react";
-import { GrUnorderedList } from "react-icons/gr";
+import { MdOutlineFormatListBulleted } from "react-icons/md";
 import Tooltip from "../ui/Tooltip";
 import { memo, useCallback } from "react";
 import UnifiedButton from "../ui/Buttons/UnifiedButton";
@@ -12,7 +12,7 @@ function BulletList({ editor }: { editor: Editor | null }) {
   return (
     <Tooltip content="Bullet List" position="bottom-end" delay={700}>
       <UnifiedButton
-        icon={<GrUnorderedList size={18} />}
+        icon={<MdOutlineFormatListBulleted size={20} />}
         size={26}
         onClick={bulletListHandler}
         variantType="icon"

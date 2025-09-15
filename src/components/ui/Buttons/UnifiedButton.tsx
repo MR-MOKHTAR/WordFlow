@@ -14,11 +14,11 @@ interface UnifiedButtonCustomProps {
   iconPosition?: "start" | "end";
   className?: string;
   color?: ButtonProps["color"] | IconButtonProps["color"];
-  variant?: ButtonProps["variant"]
+  variant?: ButtonProps["variant"];
   children?: ReactNode;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   size?: number;
-  textBtnSize?: ButtonProps["size"]
+  textBtnSize?: ButtonProps["size"];
 }
 
 const defaultClasses =
@@ -31,7 +31,7 @@ const UnifiedButton = memo(function UnifiedButton(
     onClick,
     variant,
     size = 30,
-    textBtnSize= "medium",
+    textBtnSize = "medium",
     variantType = "text",
     shape = "md",
     icon,
