@@ -3,14 +3,14 @@ name: Build & Release
 on:
   push:
     tags:
-      - "v*.*.*" # فقط وقتی تگ مثل v1.0.0 بزنی اجرا میشه
+      - "v*.*.*" # وقتی تگ مثل v1.0.0 بزنی اجرا می‌شود
 
 jobs:
   release:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest] # فقط Linux و Windows
 
     steps:
       - name: Checkout repository
@@ -28,4 +28,5 @@ jobs:
         uses: samuelmeuli/action-electron-builder@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          args: --x64
+          # target architecture
+          extra_metadata: '{"build":{"linux":{"target":["AppImage"],"arch":["x64"]},"win":{"target":["nsis"],"arch":["x64"]}}}'
