@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+# WordFlow ✍️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**WordFlow** یک ویرایشگر متن راست‌چین و سبک است که با الهام از ویرایشگرهای حرفه‌ای کدنویسی ساخته شده.  
+هدف این نرم‌افزار ایجاد تجربه‌ای ساده، سریع و زیبا برای نوشتن متن‌های روزمره است، با قابلیت‌هایی مانند:
 
-Currently, two official plugins are available:
+- 🎨 انتخاب **فونت و اندازه** به صورت زنده
+- 📑 نمایش منظم خطوط و ساختار تمیز
+- 🌙 پشتیبانی از حالت **تاریک (Dark Mode)**
+- ⚡ ساخته شده با **React + TypeScript + Vite**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 شروع سریع (Development)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+```bash
+# نصب پکیج‌ها
+npm install
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+# اجرا با HMR
+npm run dev
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
