@@ -1,8 +1,8 @@
 import { type Editor } from "@tiptap/react";
 import { HiOutlineBold } from "react-icons/hi2";
-import ButtonWithIcon from "../Ui/ButtonWithIcon";
-import Tooltip from "../Ui/Tooltip";
+import Tooltip from "../ui/Tooltip";
 import { memo, useCallback } from "react";
+import UnifiedButton from "../ui/Buttons/UnifiedButton";
 
 function Bold({ editor }: { editor: Editor | null }) {
   const boldHandler = useCallback(
@@ -11,12 +11,12 @@ function Bold({ editor }: { editor: Editor | null }) {
   );
   return (
     <Tooltip content="Bold" position="bottom-end" delay={700}>
-      <ButtonWithIcon
-        Icon={HiOutlineBold}
+      <UnifiedButton
+        icon={<HiOutlineBold size={18} />}
         size={26}
-        iconSize={16}
-        rounded="md"
         onClick={boldHandler}
+        variantType="icon"
+        shape="md"
       />
     </Tooltip>
   );

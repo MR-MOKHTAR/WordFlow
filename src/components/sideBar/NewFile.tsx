@@ -1,8 +1,8 @@
 import { useCallback } from "react";
 import { AiOutlineFileAdd } from "react-icons/ai";
-import Tooltip from "../Ui/Tooltip";
-import ButtonWithIcon from "../Ui/ButtonWithIcon";
+import Tooltip from "../ui/Tooltip";
 import useNewFile from "../contexts/newfile/useNewFile";
+import UnifiedButton from "../ui/Buttons/UnifiedButton";
 
 export default function AddNewFile() {
   const { setOpenNewFileModal } = useNewFile();
@@ -12,16 +12,15 @@ export default function AddNewFile() {
   );
 
   return (
-    <>
       <Tooltip content="New File" position="left">
-        <ButtonWithIcon
-          Icon={AiOutlineFileAdd}
+        <UnifiedButton
+        variantType="icon"
+          icon={<AiOutlineFileAdd size={20}/>}
           onClick={handleOpenModal}
-          size={30}
-          iconSize={16}
-          rounded="md"
+         size={36}
+         shape="md"
+         
         />
       </Tooltip>
-    </>
   );
 }

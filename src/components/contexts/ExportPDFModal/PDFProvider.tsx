@@ -5,6 +5,8 @@ function PDFProvider({ children }: { children: ReactNode }) {
   const [openExportModal, setOpenExportModal] = useState(false);
   const [pdfPath, setPdfPath] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [isDone, setIsDone] = useState(false);
 
   const contextValue = useMemo(
     () => ({
@@ -14,15 +16,12 @@ function PDFProvider({ children }: { children: ReactNode }) {
       setPdfPath,
       isGenerating,
       setIsGenerating,
+      isError,
+      setIsError,
+      isDone,
+      setIsDone,
     }),
-    [
-      openExportModal,
-      setOpenExportModal,
-      pdfPath,
-      setPdfPath,
-      isGenerating,
-      setIsGenerating,
-    ]
+    [openExportModal, pdfPath, isGenerating, isError, isDone]
   );
 
   return (

@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { SnackbarProps } from "@mui/joy/Snackbar";
 
 export type CellType = {
   id: string;
@@ -78,6 +79,10 @@ export type ExportPDFContextType = {
   setPdfPath: Dispatch<SetStateAction<string>>;
   isGenerating: boolean;
   setIsGenerating: Dispatch<SetStateAction<boolean>>;
+  isError: boolean;
+  setIsError: Dispatch<SetStateAction<boolean>>;
+  isDone: boolean;
+  setIsDone: Dispatch<SetStateAction<boolean>>;
 };
 
 export type NewFileContextType = {
@@ -85,4 +90,21 @@ export type NewFileContextType = {
   setOpenNewFileModal: Dispatch<SetStateAction<boolean>>;
   onClose: () => void;
   onCreate: (fileName: string) => void;
+};
+
+export type ToastData = {
+  title?: string;
+  description?: string;
+  color?: SnackbarProps["color"];
+  variant?: SnackbarProps["variant"];
+  size?: SnackbarProps["size"];
+  anchorOrigin?: SnackbarProps["anchorOrigin"];
+  duration?: number;
+};
+
+export type ToastContextType = {
+  isShowToast: boolean;
+  setIsShowToast: Dispatch<SetStateAction<boolean>>;
+  toast: ToastData;
+  setToast: Dispatch<SetStateAction<ToastData>>;
 };

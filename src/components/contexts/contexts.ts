@@ -8,19 +8,27 @@ import {
   FontContextType,
   NewFileContextType,
   RemoveCellContextType,
+  ToastContextType,
 } from "../Types";
 
-export const FilesContext = createContext<FilesContextType | null>(null);
-export const CellContext = createContext<CellContextType | null>(null);
-export const FileNameContext = createContext<FileNameContextType | null>(null);
-export const FontModalContext = createContext<FontContextType | null>(null);
-export const DeleteFileContext = createContext<DeleteFileContextType | null>(
-  null
-);
-export const RemoveCellContext = createContext<RemoveCellContextType | null>(
-  null
-);
-export const ExportPDFContext = createContext<ExportPDFContextType | null>(
-  null
-);
-export const NewFileContext = createContext<NewFileContextType | null>(null);
+const FilesContext = createContext<FilesContextType | null>(null);
+const CellContext = createContext<CellContextType | null>(null);
+const FileNameContext = createContext<FileNameContextType | null>(null);
+const FontModalContext = createContext<FontContextType | null>(null);
+const DeleteFileContext = createContext<DeleteFileContextType | null>(null);
+const RemoveCellContext = createContext<RemoveCellContextType | null>(null);
+const ExportPDFContext = createContext<ExportPDFContextType | null>(null);
+const NewFileContext = createContext<NewFileContextType | null>(null);
+const ToastContext = createContext<ToastContextType | null>(null);
+
+export {
+  FilesContext,
+  CellContext,
+  FileNameContext,
+  FontModalContext,
+  DeleteFileContext,
+  RemoveCellContext,
+  ExportPDFContext,
+  NewFileContext,
+  ToastContext,
+};

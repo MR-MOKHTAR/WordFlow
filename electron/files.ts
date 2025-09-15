@@ -4,7 +4,7 @@ import { unlink } from "fs/promises";
 import path from "path";
 
 const userDataPath = app.getPath("userData");
-const myDataDir = path.join(userDataPath, "Data");
+const myDataDir = path.join(userDataPath, "data");
 
 type DataType = {
   fileName: string; // اینجا همیشه باید با پسوند .json بیاد

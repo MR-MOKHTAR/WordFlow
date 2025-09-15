@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import AddNewFile from "./NewFile";
 import ToggleSideBar from "./ToggleSideBar";
 import ListFiles from "./ListFiles";
@@ -20,7 +20,7 @@ function SideBar() {
     <div
       className={`sidebar-container ${
         isOpenSideBar
-          ? "min-w-35 w-[24%] md:w-[22%] lg:w-[18%]"
+          ? "w-44 md:w-50 lg:w-60"
           : "w-13 items-center"
       }`}
     >
@@ -33,4 +33,4 @@ function SideBar() {
   );
 }
 
-export default SideBar;
+export default memo(SideBar);

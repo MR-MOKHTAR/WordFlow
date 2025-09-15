@@ -1,19 +1,19 @@
 import { type Editor } from "@tiptap/react";
-import ButtonWithIcon from "../Ui/ButtonWithIcon";
 import { MdOutlineUndo } from "react-icons/md";
-import Tooltip from "../Ui/Tooltip";
+import Tooltip from "../ui/Tooltip";
 import { memo, useCallback } from "react";
+import UnifiedButton from "../ui/Buttons/UnifiedButton";
 
 function Undo({ editor }: { editor: Editor | null }) {
   const undoHandler = useCallback(() => editor?.commands.undo(), [editor]);
   return (
     <Tooltip content="Undo (Ctrl+Z)" position="bottom-end" delay={700}>
-      <ButtonWithIcon
-        Icon={MdOutlineUndo}
+      <UnifiedButton
+        icon={<MdOutlineUndo size={18} />}
         size={26}
-        iconSize={16}
-        rounded="md"
+        shape="md"
         onClick={undoHandler}
+        variantType="icon"
       />
     </Tooltip>
   );

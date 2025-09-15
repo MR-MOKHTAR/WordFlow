@@ -3,8 +3,8 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 type propType = {
   words: string[];
   activeCursor?: boolean;
-  loop: boolean;
-  className: string;
+  loop?: boolean;
+  className?: string;
 };
 
 export default function MyTypewriter({

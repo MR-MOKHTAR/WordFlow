@@ -24,6 +24,4 @@ electron.contextBridge.exposeInMainWorld("ipcRenderer", {
     const [channel, ...omit] = args;
     return electron.ipcRenderer.removeListener(channel, ...omit);
   }
-  // You can expose other APTs you need here.
-  // ...
 });

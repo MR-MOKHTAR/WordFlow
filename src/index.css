@@ -111,7 +111,7 @@
   }
 
   .cell-header {
-    @apply sticky top-0 flex items-center justify-end h-8 pt-1 px-1.5 lg:px-2.5 gap-x-0.75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-md shadow-cell-header shadow-stone-300/75 dark:shadow-stone-700/75;
+    @apply sticky top-0 flex items-center justify-end h-8 px-1.5 lg:px-2.5 gap-x-0.75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-md shadow-cell-header shadow-stone-300/75 dark:shadow-stone-700/75;
   }
 
   .cell-header-btn {
@@ -132,11 +132,11 @@
   }
 
   .modal-content {
-    @apply bg-modal-content-light dark:bg-modal-content-dark text-modal-light dark:text-modal-dark border border-gray-300 dark:border-[#44475A] rounded-xl shadow-lg p-6 relative;
+    @apply bg-modal-content-light dark:bg-modal-content-dark text-modal-light dark:text-modal-dark border border-gray-300 dark:border-[#44475A] rounded-xl shadow-lg p-6 w-full relative;
   }
 
   .fs-field {
-    @apply w-full mt-2 p-2.5 border dark:border-slate-600 rounded-md 
+    @apply w-full mt-2  border dark:border-slate-600 rounded-md 
       bg-white dark:bg-[#1E1F29] text-gray-800 dark:text-gray-100 
        focus:ring-2 focus:ring-violet-500 transition-all duration-150 ease-in-out font-Vazir outline-none;
   }

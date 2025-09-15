@@ -1,5 +1,5 @@
 import { FiMinus, FiPlus } from "react-icons/fi";
-import ButtonWithIcon from "../Ui/ButtonWithIcon";
+import ButtonWithIcon from "../ui/Buttons/ButtonWithIcon";
 import { Dispatch, memo, SetStateAction, useCallback } from "react";
 
 type propType = {
@@ -16,9 +16,8 @@ function CellCollapseToggle({ isOpen, setIsOpen }: propType) {
     <div className="absolute right-1.5 lg:right-2.5 top-0.5 z-10">
       <ButtonWithIcon
         Icon={isOpen ? FiMinus : FiPlus}
-        size={26}
+               btnSize={26}
         iconSize={16}
-        rounded="md"
         onClick={clickHandler}
       />
     </div>

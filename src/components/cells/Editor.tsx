@@ -128,10 +128,10 @@ export default function TipTap() {
 
   useEffect(() => {
     const listener = () => saveShortcutRef.current();
-    window.ipcRenderer.on("CommandOrControl+S", listener);
+    window.ipcRenderer.on("shortcut:save", listener);
 
     return () => {
-      window.ipcRenderer.removeListener("CommandOrControl+S", listener);
+      window.ipcRenderer.removeListener("shortcut:save", listener);
     };
   }, []);
 

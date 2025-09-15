@@ -1,8 +1,8 @@
 import { memo, useCallback, useState } from "react";
 import { MdOutlineCheck, MdOutlineContentCopy } from "react-icons/md";
-import ButtonWithIcon from "../Ui/ButtonWithIcon";
-import Tooltip from "../Ui/Tooltip";
+import Tooltip from "../ui/Tooltip";
 import { useCellsContext } from "../contexts/cell/useCellsContext";
+import UnifiedButton from "../ui/Buttons/UnifiedButton";
 
 type propType = {
   cellId: string;
@@ -34,12 +34,13 @@ function CopyButton({ cellId }: propType) {
 
   return (
     <Tooltip content="Copy (Ctrl+C)" position="bottom-end" delay={700}>
-      <ButtonWithIcon
-        Icon={!isCoped ? MdOutlineContentCopy : MdOutlineCheck}
+      <UnifiedButton
+        icon={!isCoped ? <MdOutlineContentCopy size={18}/> : <MdOutlineCheck size={18}/>}
         onClick={copyContextHandler}
+        variantType="icon"
         size={26}
-        iconSize={16}
-        rounded="md"
+
+
       />
     </Tooltip>
   );

@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { GoFile, GoKebabHorizontal } from "react-icons/go";
-import ContextMenu from "../Ui/ContextMenu";
+import ContextMenu from "../ui/ContextMenu";
 
 type FileItemProps = {
   file: string;

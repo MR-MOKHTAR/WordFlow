@@ -1,6 +1,6 @@
 import { IoMoonOutline, IoSunnySharp } from "react-icons/io5";
-import ButtonWithIcon from "../Ui/ButtonWithIcon";
 import { useCallback, useState } from "react";
+import UnifiedButton from "../ui/Buttons/UnifiedButton";
 
 export default function Theme() {
   const [isDark, setIsDark] = useState(true);
@@ -12,10 +12,12 @@ export default function Theme() {
   }, []);
 
   return (
-    <ButtonWithIcon
+    <UnifiedButton
       onClick={toggleTheme}
-      Icon={isDark ? IoMoonOutline : IoSunnySharp}
-      className="mt-auto"
+      variantType="icon"
+      size={30}
+      shape="md"
+      icon={isDark ? <IoMoonOutline size={18} /> : <IoSunnySharp size={18} />}
     />
   );
 }

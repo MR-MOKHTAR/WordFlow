@@ -1,6 +1,6 @@
 import useFont from "../contexts/FontModal/useFont";
 import FontModal from "../Fonts/FontModal";
-import DeleteModal from "../Ui/DeleteModal";
+import DeleteModal from "./DeleteModal";
 import useDeleteFile from "../contexts/DeleteFileModal/useDeleteFile";
 import useRemoveCell from "../contexts/cell/useRemoveCell";
 import { useCellsContext } from "../contexts/cell/useCellsContext";
@@ -8,7 +8,7 @@ import useSaveFile from "../SaveFile/useSaveFile";
 import React, { useCallback } from "react";
 import useExportPDF from "../contexts/ExportPDFModal/useExportPDF";
 import ExportPDFModal from "../contexts/ExportPDFModal/ExportPDFModal";
-import NewFileModal from "../Ui/NewFileModal";
+import NewFileModal from "./NewFileModal";
 import useNewFile from "../contexts/newfile/useNewFile";
 
 function ShowModals() {

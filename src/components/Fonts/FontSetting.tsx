@@ -1,8 +1,8 @@
 import { AiOutlineFontSize } from "react-icons/ai";
-import ButtonWithIcon from "../Ui/ButtonWithIcon";
-import Tooltip from "../Ui/Tooltip";
+import Tooltip from "../ui/Tooltip";
 import useFont from "../contexts/FontModal/useFont";
 import { useCallback } from "react";
+import UnifiedButton from "../ui/Buttons/UnifiedButton";
 
 export default function FontSetting() {
   const { setOpenFontModal } = useFont();
@@ -12,10 +12,12 @@ export default function FontSetting() {
 
   return (
     <Tooltip content="Font Settings" position="bottom" delay={200}>
-      <ButtonWithIcon
-        Icon={AiOutlineFontSize}
-        className="header-btn"
+      <UnifiedButton
         onClick={handleClick}
+        variantType="icon"
+        size={30}
+        shape="md"
+        icon={<AiOutlineFontSize size={18} />}
       />
     </Tooltip>
   );

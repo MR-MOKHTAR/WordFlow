@@ -9,7 +9,7 @@ function NewFileProvider({ children }: { children: ReactNode }) {
   const createFile = useCreateFile();
   const { setFileName } = useFileName();
   const createdNewCell = useCreatedNewCell();
-  const { openFile } = useFilesContext();
+  const { openFileWithFetch } = useFilesContext();
 
   const [openNewFileModal, setOpenNewFileModal] = useState(false);
   const onClose = useCallback(() => setOpenNewFileModal(false), []);
@@ -23,12 +23,13 @@ function NewFileProvider({ children }: { children: ReactNode }) {
       const result = await createFile({ fileName: fullName });
       if (!result) return;
 
-      openFile(fullName, []);
+      openFileWithFetch(fullName);
+      // openFile(fullName, []);
       setFileName(fullName);
       createdNewCell();
       setOpenNewFileModal(false);
     },
-    [createFile, openFile, setFileName, createdNewCell]
+    [createFile, setFileName, createdNewCell, openFileWithFetch]
   );
 
   const contextValue = useMemo(

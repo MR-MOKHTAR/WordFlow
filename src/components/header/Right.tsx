@@ -1,11 +1,11 @@
 import { HiMinus } from "react-icons/hi2";
 import { IoCloseOutline } from "react-icons/io5";
 import { LuMaximize } from "react-icons/lu";
-import ButtonWithIcon from "../Ui/ButtonWithIcon";
 import { useCallback } from "react";
+import UnifiedButton from "../ui/Buttons/UnifiedButton";
 
 function HeaderRight() {
-    const handleClose = useCallback(() => {
+  const handleClose = useCallback(() => {
     window.ipcRenderer.send("window:close");
   }, []);
 
@@ -19,17 +19,27 @@ function HeaderRight() {
 
   return (
     <div className="flex items-center gap-1">
-      <ButtonWithIcon
+      <UnifiedButton
+        variantType="icon"
+        size={30}
+        shape="md"
         onClick={handleClose}
-        Icon={IoCloseOutline}
-        iconSize={18}
+        icon={<IoCloseOutline size={18} />}
       />
-      <ButtonWithIcon
+      <UnifiedButton
+        variantType="icon"
+        size={30}
+        shape="md"
         onClick={handleMaximize}
-        Icon={LuMaximize}
-        iconSize={18}
+        icon={<LuMaximize size={18} />}
       />
-      <ButtonWithIcon onClick={handleMinimize} Icon={HiMinus} iconSize={18} />
+      <UnifiedButton
+        variantType="icon"
+        size={30}
+        shape="md"
+        onClick={handleMinimize}
+        icon={<HiMinus size={18} />}
+      />
     </div>
   );
 }

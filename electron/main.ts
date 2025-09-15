@@ -32,6 +32,7 @@ process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL
   : RENDERER_DIST;
 
 export let win: BrowserWindow | null;
+let splashWin: BrowserWindow | null = null;
 
 function createWindow() {
   win = new BrowserWindow({
@@ -46,6 +47,7 @@ function createWindow() {
     width: 1050,
     height: 600,
     resizable: true,
+    show: false,
   });
 
   win.maximize();
@@ -58,12 +60,35 @@ function createWindow() {
   if (VITE_DEV_SERVER_URL) {
     win.loadURL(VITE_DEV_SERVER_URL);
   } else {
-    // win.loadFile('dist/index.html')
     win.loadFile(path.join(RENDERER_DIST, "index.html"));
   }
   Menu.setApplicationMenu(null);
   globalShortcutHandler();
 }
+
+const createSplashWindow = () => {
+  splashWin = new BrowserWindow({
+    width: 400,
+    height: 250,
+    frame: false,
+    alwaysOnTop: true,
+    center: true,
+    resizable: false,
+    show: false,
+  });
+
+  if (VITE_DEV_SERVER_URL) {
+    // dev mode
+    splashWin.loadURL(`${VITE_DEV_SERVER_URL}/splash.html`);
+  } else {
+    // build mode
+    splashWin.loadFile(path.join(RENDERER_DIST, "splash.html"));
+  }
+
+  splashWin.once("ready-to-show", () => {
+    splashWin?.show();
+  });
+};
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
@@ -72,14 +97,40 @@ app.on("window-all-closed", () => {
   }
 });
 
-app.on("activate", () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow();
-  }
-});
+// * این برای مک است تا همه پنجره ها بسته شود
+// app.on("activate", () => {
+//   if (BrowserWindow.getAllWindows().length === 0) {
+//     createWindow();
+//   }
+// });
 
 app.commandLine.appendSwitch("disable-gpu");
-app.whenReady().then(createWindow);
+
+app.whenReady().then(() => {
+  createSplashWindow();
+
+  setTimeout(() => {
+    splashWin?.close();
+    splashWin = null;
+
+    createWindow();
+
+    win?.once("ready-to-show", () => {
+      win?.show();
+    });
+  }, 3000);
+});
+
+// app.whenReady().then(() => {
+//   createSplashWindow();
+//   createWindow();
+
+//   win?.once("ready-to-show", () => {
+//     splashWin?.close();
+//     splashWin = null;
+//     win?.show();
+//   });
+// });
 
 ipcMain.on("window:close", () => {
   win?.close();
@@ -113,10 +164,13 @@ ipcMain.handle("save-file", async (_event, data) => {
 });
 
 // * export PDF
-ipcMain.handle("export-to-pdf", async (_event, cells: string[]) => {
-  const pdfPath = await exportToPdf(cells);
-  return pdfPath;
-});
+ipcMain.handle(
+  "export-to-pdf",
+  async (_event, data: { content: string[]; fileName: string }) => {
+    const pdfPath = await exportToPdf(data.content, data.fileName);
+    return pdfPath;
+  }
+);
 
 ipcMain.handle("open-directory", (_event, pdfPath: string) =>
   shell.showItemInFolder(pdfPath)

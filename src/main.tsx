@@ -12,26 +12,31 @@ import DeletedFileContext from "./components/contexts/DeleteFileModal/DeleteFile
 import RemoveCellProvider from "./components/contexts/cell/Remove.tsx";
 import PDFProvider from "./components/contexts/ExportPDFModal/PDFProvider.tsx";
 import NewFileProvider from "./components/contexts/newfile/Provider.tsx";
+import ToastProvider from "./components/contexts/toast/proviter.tsx";
+import { CssBaseline } from "@mui/material";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <FilesProvider>
-      <FontContext>
-        <DeletedFileContext>
-          <CellsProvider>
-            <RemoveCellProvider>
-              <PDFProvider>
-                <MainFileName>
-                  <NewFileProvider>
-                    <App />
-                  </NewFileProvider>
-                </MainFileName>
-              </PDFProvider>
-            </RemoveCellProvider>
-          </CellsProvider>
-        </DeletedFileContext>
-      </FontContext>
-    </FilesProvider>
+    <ToastProvider>
+      <FilesProvider>
+        <MainFileName>
+          <FontContext>
+            <DeletedFileContext>
+              <CellsProvider>
+                <RemoveCellProvider>
+                  <PDFProvider>
+                    <NewFileProvider>
+                      <CssBaseline />
+                      <App />
+                    </NewFileProvider>
+                  </PDFProvider>
+                </RemoveCellProvider>
+              </CellsProvider>
+            </DeletedFileContext>
+          </FontContext>
+        </MainFileName>
+      </FilesProvider>
+    </ToastProvider>
   </React.StrictMode>
 );
 

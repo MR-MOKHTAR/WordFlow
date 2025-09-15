@@ -1,8 +1,8 @@
 import { type Editor } from "@tiptap/react";
-import ButtonWithIcon from "../Ui/ButtonWithIcon";
 import { MdOutlineRedo } from "react-icons/md";
-import Tooltip from "../Ui/Tooltip";
+import Tooltip from "../ui/Tooltip";
 import { memo, useCallback } from "react";
+import UnifiedButton from "../ui/Buttons/UnifiedButton";
 
 type RedoProp = {
   editor: Editor | null;
@@ -11,12 +11,12 @@ function Redo({ editor }: RedoProp) {
   const redoHandler = useCallback(() => editor?.commands.redo(), [editor]);
   return (
     <Tooltip content="Redo (Ctrl+Y)" position="bottom-end" delay={700}>
-      <ButtonWithIcon
-        Icon={MdOutlineRedo}
+      <UnifiedButton
+        icon={<MdOutlineRedo size={18} />}
         size={26}
-        iconSize={16}
-        rounded="md"
+        shape="md"
         onClick={redoHandler}
+        variantType="icon"
       />
     </Tooltip>
   );

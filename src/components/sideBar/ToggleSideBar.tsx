@@ -1,6 +1,7 @@
 import { BsReverseLayoutSidebarReverse } from "react-icons/bs";
-import MyButton from "../Ui/ButtonWithIcon";
+// import MyButton from "../ui/Buttons/ButtonWithIcon";
 import { Dispatch, memo, SetStateAction, useCallback } from "react";
+import UnifiedButton from "../ui/Buttons/UnifiedButton";
 
 type PropType = {
   setIsOpenSideBar: Dispatch<SetStateAction<boolean>>;
@@ -13,12 +14,12 @@ function ToggleSideBar({ setIsOpenSideBar }: PropType) {
   }, [setIsOpenSideBar]);
 
   return (
-    <MyButton
+    <UnifiedButton
       onClick={showSideBarHandler}
-      Icon={BsReverseLayoutSidebarReverse}
-      size={30}
-      iconSize={16}
-      rounded="md"
+      icon={<BsReverseLayoutSidebarReverse size={20} />}
+      size={36}
+      shape="md"
+      variantType="icon"
     />
   );
 }

@@ -7,9 +7,8 @@ type Props = {
 
 function LabelWithDot({ htmlFor, children }: Props) {
   return (
-    <label htmlFor={htmlFor} className="flex items-center gap-x-2">
-      <span className="inline-block size-3 bg-slate-300 rounded-full"></span>
-      <span className="font-bold text-lg text-gray-700 dark:text-gray-200">
+    <label htmlFor={htmlFor} className="flex items-center gap-x-2 mb-2">
+      <span className="font-bold text-base text-gray-700 dark:text-gray-200 text-nowrap">
         {children}
       </span>
     </label>

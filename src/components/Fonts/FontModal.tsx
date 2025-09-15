@@ -1,82 +1,58 @@
 import LabelWithDot from "./LabelWithDot";
-import InputField from "./InputField";
 import SelectField from "./SelectField";
-import MyModal from "../Ui/MyModal";
-import { toEnglishDigits } from "./../Utils/numberUtils";
+import MyModal from "../ui/MyModal";
 import useFont from "../contexts/FontModal/useFont";
-import { ChangeEvent, memo, useCallback } from "react";
-
-/*
-  { label: "Traditional Arabic", value: "TraditionalArabic" },
-  { label: "Tahoma Arabic", value: "TahomaArabic" },
-  { label: "Dubai", value: "Dubai" },
-  { label: "Cairo", value: "Cairo" },
-
-  // هنری
-  { label: "Diwani", value: "Diwani" },
-  { label: "Thuluth", value: "Thuluth" },
-  { label: "Kufi", value: "Kufi" },
-  { label: "Noto Nastaliq Urdu", value: "NotoNastaliqUrdu" },
-
-
-*/
-const fonts = [
-  // فارسی
-  { label: "وزیر", value: "Vazir" },
-  { label: "شبنم", value: "Shabnam" },
-  { label: "صمیم", value: "Samim FD" },
-  { label: "ایران‌سنس", value: "IRANSans" },
-  { label: "امیری (فارسی)", value: "Amiri fa" },
-  { label: "القلم قرآن", value: "Al Qalam" },
-  { label: "نستعلیق", value: "IranNastaliq" },
-
-  // Arabic
-  { label: "Amiri (عربی)", value: "Amiri" },
-  { label: "Scheherazade", value: "Scheherazade New" },
-  { label: "Noto Naskh Arabic", value: "Noto Naskh Arabic" },
-  { label: "Noto Kufi Arabic", value: "Noto Kufi Arabic" },
-];
+import { memo, useCallback } from "react";
+import FontSizeSlider from "./FontSizeSlider";
+import LivePreview from "./LivePreview";
 
 function FontModal() {
-  const { setOpenFontModal, setFontFamily, fontSize, setFontSize } = useFont();
+  const { setOpenFontModal } = useFont();
 
   const onClose = useCallback(
     () => setOpenFontModal(false),
     [setOpenFontModal]
   );
 
-  const onChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) =>
-      setFontSize(toEnglishDigits(e.target.value)),
-    [setFontSize]
-  );
-
-  const onSelectChange = useCallback(
-    (e: ChangeEvent<HTMLSelectElement>) => setFontFamily(e.target.value),
-    [setFontFamily]
-  );
-
   return (
-    <MyModal onClose={onClose} contentSize="sm">
-      <div className="space-y-6 w-70 mx-auto">
-        <div>
-          <LabelWithDot htmlFor="fontSize">اندازه فونت</LabelWithDot>
-          <InputField
-            id="fontSize"
-            placeholder={`مثال : ${fontSize}`}
-            value={fontSize}
-            onChange={onChange}
-          />
-        </div>
+    <MyModal onClose={onClose} contentSize="3xl">
+   <div className="flex items-center gap-3 mb-6">
+  {/* خط سمت چپ */}
+  <span className="flex-1 h-[2px] bg-gradient-to-l from-transparent to-cyan-500"></span>
 
-        <div>
-          <LabelWithDot htmlFor="fontFamily">اسم فونت</LabelWithDot>
-          <SelectField
-            id="fontFamily"
-            options={fonts}
-            onChange={onSelectChange}
-          />
+  {/* دایره تزئینی سمت چپ */}
+  <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+
+  {/* عنوان */}
+  <h2 className="text-center font-bold text-2xl tracking-tight whitespace-nowrap">
+    تنظیمات فونت
+  </h2>
+
+  {/* دایره تزئینی سمت راست */}
+  <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+
+  {/* خط سمت راست */}
+  <span className="flex-1 h-[2px] bg-gradient-to-r from-transparent to-cyan-500"></span>
+</div>
+
+
+
+      <div className="space-y-8 mx-auto flex-center! flex-col">
+        <div className="flex-between gap-12 *:flex-1">
+         <div className="flex-between gap-x-3">
+           <LabelWithDot htmlFor="fontFamily">نرم افزار</LabelWithDot>
+          <SelectField />
+         </div>
+         <div className="flex-between gap-x-3">
+           <LabelWithDot htmlFor="fontFamily">سیستم</LabelWithDot>
+          <SelectField />
+         </div>
         </div>
+        <div className="flex-between gap-x-3">
+          <LabelWithDot htmlFor="fontSize">اندازه</LabelWithDot>
+          <FontSizeSlider />
+        </div>
+        <LivePreview />
       </div>
     </MyModal>
   );

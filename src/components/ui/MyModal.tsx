@@ -1,19 +1,33 @@
 import { memo, MouseEvent, ReactNode, useCallback } from "react";
 import { MdOutlineClose } from "react-icons/md";
-import ButtonWithIcon from "./ButtonWithIcon";
+import UnifiedButton from "./Buttons/UnifiedButton";
 
 type ModalProps = {
   children: ReactNode;
-  contentSize?: "xs" | "sm" | "md" | "lg";
+  contentSize?:
+    | "xs"
+    | "sm"
+    | "md"
+    | "lg"
+    | "xl"
+    | "2xl"
+    | "3xl"
+    | "4xl"
+    | "5xl";
   onClose?: () => void;
   hasXbtn?: boolean;
 };
 
-const sizeClasses: Record<NonNullable<ModalProps["contentSize"]>, string> = {
-  xs: "max-w-xs", // 320px
-  sm: "max-w-sm", // 384px
-  md: "max-w-md", // 448px
-  lg: "max-w-lg", // 512px
+const sizeValues: Record<NonNullable<ModalProps["contentSize"]>, number> = {
+  xs: 320, // max-w-xs
+  sm: 384, // max-w-sm
+  md: 448, // max-w-md
+  lg: 512, // max-w-lg
+  xl: 578,
+  "2xl": 672,
+  "3xl": 768,
+  "4xl": 896,
+  "5xl": 1024,
 };
 
 const MyModal = memo(function MyModal({
@@ -34,17 +48,21 @@ const MyModal = memo(function MyModal({
       onClick={onClose} // بستن وقتی روی overlay کلیک شد
     >
       <div
-        className={`modal-content w-full relative ${sizeClasses[contentSize]}`}
+        className={`modal-content`}
+        style={{ maxWidth: `${sizeValues[contentSize]}px` }}
         onClick={clickHandler} // جلوگیری از بستن هنگام کلیک روی محتوا
       >
         {children}
 
         {hasXbtn && onClose && (
-          <div className="absolute -top-2.5 -right-2.5">
-            <ButtonWithIcon
-              className="w-5 h-5 bg-gray-300/50 dark:bg-gray-500/15 hover:bg-gray-300 dark:hover:bg-gray-500/40"
-              Icon={MdOutlineClose}
+          <div className="absolute -top-2.5 -right-2.5 z-50">
+            <UnifiedButton
               onClick={onClose}
+              variantType="icon"
+              size={28}
+              shape="full"
+              icon={<MdOutlineClose size={18} />}
+              className="bg-gray-300/50! hover:bg-gray-300! dark:bg-gray-700/50! dark:hover:bg-gray-700!"
             />
           </div>
         )}

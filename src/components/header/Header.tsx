@@ -7,7 +7,7 @@ import Theme from "./Theme";
 
 export default function Header() {
   return (
-    <div className="header flex-between fixed w-full h-9 px-2.5 shadow-sm z-20 bg-sidebar-light dark:bg-sidebar-dark dark:**:text-[#f8f8f2] backdrop-blur-md text-gray-800">
+    <div className="header flex-between fixed w-full h-9 px-2.5 shadow-sm z-20 bg-sidebar-light dark:bg-sidebar-dark backdrop-blur-md text-gray-800">
       <HeaderRight />
 
       <div className="flex items-center gap-x-1">
