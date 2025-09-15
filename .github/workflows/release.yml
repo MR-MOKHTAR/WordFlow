@@ -3,7 +3,7 @@ name: Build & Release
 on:
   push:
     tags:
-      - "v*.*.*"
+      - "v*.*.*" # فقط وقتی تگ می‌زنید اجرا می‌شود، مثل v1.0.0
 
 jobs:
   release:
@@ -25,4 +25,9 @@ jobs:
         run: npm install
 
       - name: Build release
-        run: npm run build
+        run: |
+          if [ "${{ matrix.os }}" == "windows-latest" ]; then
+            npm run build:win
+          else
+            npm run build:linux
+          fi
