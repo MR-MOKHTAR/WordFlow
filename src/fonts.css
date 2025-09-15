@@ -1,130 +1,217 @@
-/** Vazir Regular (400) */
+/** Vazir */
 @font-face {
   font-family: "Vazir";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local("Vazirmatn Regular"), local("Vazir Regular"), local("Vazir"),
-    url("/fonts/vazir/Vazirmatn-Regular.woff2") format("woff2"),
-    url("/fonts/vazir/Vazirmatn-Regular.woff") format("woff");
+  src: url("/fonts/vazir/Vazirmatn-Regular.woff2") format("woff2");
 }
-
-/* Medium (500) */
 @font-face {
   font-family: "Vazir";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: local("Vazirmatn Medium"), local("Vazir Medium"),
-    url("/fonts/vazir/Vazirmatn-Medium.woff2") format("woff2"),
-    url("/fonts/vazir/Vazirmatn-Medium.woff") format("woff");
+  src: url("/fonts/vazir/Vazirmatn-Medium.woff2") format("woff2");
 }
-
-/* Bold (700) */
 @font-face {
   font-family: "Vazir";
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local("Vazirmatn Bold"), local("Vazir Bold"),
-    url("/fonts/vazir/Vazirmatn-Bold.woff2") format("woff2"),
-    url("/fonts/vazir/Vazirmatn-Bold.woff") format("woff");
+  src: url("/fonts/vazir/Vazirmatn-Bold.woff2") format("woff2");
 }
 
-/** Shabnam Regular (400) */
+/** Shabnam */
 @font-face {
   font-family: "Shabnam";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local("Shabnam Regular"), local("Shabnam"),
-    url("/fonts/shabnam/Shabnam-FD.woff2") format("woff2"),
-    url("/fonts/shabnam/Shabnam-FD.woff") format("woff");
+  src: url("/fonts/shabnam/Shabnam-FD.woff2") format("woff2");
 }
-
-/* Medium (500) */
-font-face {
-  font-family: "Shabnam";
-  font-weight: normal;
-  font-display: swap;
-  src: local("Shabnam Medium"), local("Shabnam-Medium"),
-    url("/fonts/shabnam/Shabnam-Medium-FD.woff2") format("woff2"),
-    url("/fonts/shabnam/Shabnam-Medium-FD.woff") format("woff");
-}
-/* Bold (700) */
 @font-face {
   font-family: "Shabnam";
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: local("Shabnam Bold"), local("Shabnam-Bold"),
-    url("/fonts/shabnam/Shabnam-Bold-FD.woff2") format("woff2"),
-    url("/fonts/shabnam/Shabnam-Bold-FD.woff") format("woff");
-}
-/** Samim FD Regular (400) */
-@font-face {
-  font-family: "Samim FD";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: local("Samim FD"), local("Samim"),
-    url("/fonts/samim/Samim-FD.woff2") format("woff2"),
-    url("/fonts/samim/Samim-FD.woff") format("woff");
-}
-
-/* Medium (500) */
-@font-face {
-  font-family: "Samim FD";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: local("Samim FD"), local("Samim"),
-    url("/fonts/samim/Samim-Medium-FD.woff2") format("woff2"),
-    url("/fonts/samim/Samim-Medium-FD.woff") format("woff");
+  src: url("/fonts/shabnam/Shabnam-Medium-FD.woff2") format("woff2");
 }
-
-/* Bold (700) */
 @font-face {
-  font-family: "Samim FD";
+  font-family: "Shabnam";
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local("Samim FD"), local("Samim"),
-    url("/fonts/samim/Samim-Bold-FD.woff2") format("woff2"),
-    url("/fonts/samim/Samim-Bold-FD.woff") format("woff");
+  src: url("/fonts/shabnam/Shabnam-Bold-FD.woff2") format("woff2");
 }
 
-/** IRANSans Regular (400) */
+/** Samim */
+@font-face {
+  font-family: "Samim";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/samim/Samim-FD.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Samim";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/samim/Samim-Medium-FD.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Samim";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/samim/Samim-Bold-FD.woff2") format("woff2");
+}
+
+/** IRANSans */
 @font-face {
   font-family: "IRANSans";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local("IRANSans"),
-    url("/fonts/iransanc/IRANSansWeb.woff2") format("woff2"),
-    url("/fonts/iransanc/IRANSansWeb.woff") format("woff");
+  src: url("/fonts/iransanc/IRANSansWeb.woff2") format("woff2");
 }
-
-/* Medium (500) */
 @font-face {
   font-family: "IRANSans";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: local("IRANSans"),
-    url("/fonts/iransanc/IRANSansWeb_Medium.woff2") format("woff2"),
-    url("/fonts/iransanc/IRANSansWeb_Medium.woff") format("woff");
+  src: url("/fonts/iransanc/IRANSansWeb_Medium.woff2") format("woff2");
 }
-
-/* Bold (700) */
 @font-face {
   font-family: "IRANSans";
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local("IRANSans"),
-    url("/fonts/iransanc/IRANSansWeb_Bold.woff2") format("woff2"),
-    url("/fonts/iransanc/IRANSansWeb_Bold.woff") format("woff");
+  src: url("/fonts/iransanc/IRANSansWeb_Bold.woff2") format("woff2");
+}
+
+/** Amiri */
+@font-face {
+  font-family: "Amiri";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Amiri/Amiri-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Amiri";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/Amiri/Amiri-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Amiri";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Amiri/Amiri-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Amiri";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/Amiri/Amiri-BoldItalic.ttf") format("truetype");
+}
+
+/** Al Qalam */
+@font-face {
+  font-family: "Al Qalam";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/al-qalam/Al Qalam Quran Majeed Web Regular.ttf")
+    format("truetype");
+}
+
+/** IranNastaliq */
+@font-face {
+  font-family: "IranNastaliq";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/IranNastaliq/IranNastaliq.ttf") format("truetype");
+}
+
+/** Scheherazade New */
+@font-face {
+  font-family: "Scheherazade New";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/ScheherazadeNew/ScheherazadeNew-Regular.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Scheherazade New";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/ScheherazadeNew/ScheherazadeNew-Medium.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Scheherazade New";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/ScheherazadeNew/ScheherazadeNew-Bold.ttf") format("truetype");
+}
+
+/** Noto Naskh Arabic */
+@font-face {
+  font-family: "Noto Naskh Arabic";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Nato-Naskh-Arabic/NotoNaskhArabic-Regular.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Noto Naskh Arabic";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Nato-Naskh-Arabic/NotoNaskhArabic-Medium.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Noto Naskh Arabic";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Nato-Naskh-Arabic/NotoNaskhArabic-Bold.ttf")
+    format("truetype");
+}
+
+/** Noto Kufi Arabic */
+@font-face {
+  font-family: "Noto Kufi Arabic";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/NatoKufiArabic/NotoKufiArabic-Regular.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Noto Kufi Arabic";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/NatoKufiArabic/NotoKufiArabic-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Noto Kufi Arabic";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/NatoKufiArabic/NotoKufiArabic-Bold.ttf") format("truetype");
 }
 
 /** Amiri Regular (400) */
@@ -133,8 +220,7 @@ font-face {
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local("Amiri"),
-    url("/fonts/amiri-farsi/amiri-regular.ttf") format("truetype");
+  src: url("/fonts/amiri-farsi/amiri-regular.ttf") format("truetype");
 }
 
 /* Medium (500) */
@@ -143,154 +229,5 @@ font-face {
   font-weight: 500;
   font-style: italic;
   font-display: swap;
-  src: local("Amiri"),
-    url("/fonts/amiri-farsi/amiri-slanted.ttf") format("truetype");
-}
-
-/** Al Qalam Regular (400) */
-@font-face {
-  font-family: "Al Qalam";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: local("Al Qalam"), local("al-qalam"),
-    url("/fonts/al-qalam/Al Qalam Quran Majeed Web Regular.ttf")
-      format("truetype");
-}
-/** IranNastaliq Regular (400) */
-@font-face {
-  font-family: "IranNastaliq";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: local("IranNastaliq"), local("IranNastaliq2"),
-    url("/fonts/IranNastaliq/IranNastaliq.ttf") format("truetype");
-}
-
-/** Amiri Regular (400) */
-@font-face {
-  font-family: "Amiri";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: local("Amiri"), url("/fonts/Amiri/Amiri-Regular.ttf") format("truetype");
-}
-
-/* Bold (700) */
-@font-face {
-  font-family: "Amiri";
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: local("Amiri"), url("/fonts/Amiri/Amiri-Bold.ttf") format("truetype");
-}
-
-/* Regular Italic (400) */
-@font-face {
-  font-family: "Amiri";
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-  src: local("Amiri"), url("/fonts/Amiri/Amiri-Italic.ttf") format("truetype");
-}
-/* Bold Italic (700) */
-@font-face {
-  font-family: "Amiri";
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-  src: local("Amiri"),
-    url("/fonts/Amiri/Amiri-BoldItalic.ttf") format("truetype");
-}
-
-/** Scheherazade New Regular (400) */
-@font-face {
-  font-family: "Scheherazade New", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: local("Scheherazade New"),
-    url("/fonts/ScheherazadeNew/ScheherazadeNew-Regular.ttf") format("truetype");
-}
-
-/* Medium (500) */
-@font-face {
-  font-family: "Scheherazade New", serif;
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  src: local("Scheherazade New"),
-    url("/fonts/ScheherazadeNew/ScheherazadeNew-Medium.ttf") format("truetype");
-}
-
-/* Bold (400) */
-@font-face {
-  font-family: "Scheherazade New", serif;
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: local("Scheherazade New"),
-    url("/fonts/ScheherazadeNew/ScheherazadeNew-Bold.ttf") format("truetype");
-}
-
-/** Noto Naskh Arabic Regular (400) */
-@font-face {
-  font-family: "Noto Naskh Arabic", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: local("Noto Naskh Arabic"),
-    url("/fonts/Nato-Naskh-Arabic/NotoNaskhArabic-Regular.ttf")
-      format("truetype");
-}
-
-/* Medium (500) */
-@font-face {
-  font-family: "Noto Naskh Arabic", serif;
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  src: local("Noto Naskh Arabic"),
-    url("/fonts/Nato-Naskh-Arabic/NotoNaskhArabic-Medium.ttf")
-      format("truetype");
-}
-
-/* Bold (400) */
-@font-face {
-  font-family: "Noto Naskh Arabic", serif;
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: local("Noto Naskh Arabic"),
-    url("/fonts/Nato-Naskh-Arabic/NotoNaskhArabic-Bold.ttf") format("truetype");
-}
-
-/** Noto Kufi Arabic Regular (400) */
-@font-face {
-  font-family: "Noto Kufi Arabic", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: local("Noto Kufi Arabic"),
-    url("/fonts/NatoKufiArabic/NotoKufiArabic-Regular.ttf") format("truetype");
-}
-
-/* Medium (500) */
-@font-face {
-  font-family: "Noto Kufi Arabic", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  src: local("Noto Kufi Arabic"),
-    url("/fonts/NatoKufiArabic/NotoKufiArabic-Medium.ttf") format("truetype");
-}
-
-/* Bold (400) */
-@font-face {
-  font-family: "Noto Kufi Arabic", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: local("Noto Kufi Arabic"),
-    url("/fonts/NatoKufiArabic/NotoKufiArabic-Bold.ttf") format("truetype");
+  src: url("/fonts/amiri-farsi/amiri-slanted.ttf") format("truetype");
 }
