@@ -70,34 +70,35 @@
   },
   "main": "dist-electron/main.js",
   "build": {
-    "appId": "com.yourname.notesapp",
-    "productName": "NotesApp",
+    "appId": "com.mokhtar.wordflow",
+    "productName": "WordFlow",
     "directories": {
-      "buildResources": "assets",
       "output": "dist_build"
     },
     "files": [
-      "dist-electron/**/*",
-      "dist/**/*",
+      "dist/**",
+      "node_modules/**",
       "package.json"
     ],
     "win": {
       "target": [
-        "nsis"
-      ],
-      "icon": "assets/react.svg"
-    },
-    "mac": {
-      "target": [
-        "dmg"
-      ],
-      "icon": "assets/react.svg"
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
     },
     "linux": {
       "target": [
-        "AppImage"
-      ],
-      "icon": "assets/react.svg"
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
     }
   }
 }
