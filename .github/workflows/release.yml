@@ -37,3 +37,14 @@ jobs:
         run: npm run build:linux
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+       # 📌 این بخش جدید برای آپلود به Release
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.exe
+            dist/*.AppImage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       
