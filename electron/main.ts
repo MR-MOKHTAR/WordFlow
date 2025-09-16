@@ -43,7 +43,7 @@ function createWindow() {
       nodeIntegration: false,
     },
     frame: false,
-    hasShadow: true,
+    hasShadow: false,
     width: 1050,
     height: 600,
     resizable: true,
@@ -71,10 +71,15 @@ const createSplashWindow = () => {
     width: 400,
     height: 250,
     frame: false,
-    alwaysOnTop: true,
+    alwaysOnTop: false,
     center: true,
     resizable: false,
     show: false,
+    webPreferences: {
+      preload: path.join(__dirname, "preload.mjs"),
+      contextIsolation: true,
+      nodeIntegration: false,
+    },
   });
 
   if (VITE_DEV_SERVER_URL) {
@@ -106,31 +111,31 @@ app.on("window-all-closed", () => {
 
 app.commandLine.appendSwitch("disable-gpu");
 
-app.whenReady().then(() => {
-  createSplashWindow();
-
-  setTimeout(() => {
-    splashWin?.close();
-    splashWin = null;
-
-    createWindow();
-
-    win?.once("ready-to-show", () => {
-      win?.show();
-    });
-  }, 3000);
-});
-
 // app.whenReady().then(() => {
 //   createSplashWindow();
-//   createWindow();
 
-//   win?.once("ready-to-show", () => {
+//   setTimeout(() => {
 //     splashWin?.close();
 //     splashWin = null;
-//     win?.show();
-//   });
+
+//     createWindow();
+
+//     win?.once("ready-to-show", () => {
+//       win?.show();
+//     });
+//   }, 3000);
 // });
+
+app.whenReady().then(() => {
+  createSplashWindow();
+  createWindow();
+
+  win?.once("ready-to-show", () => {
+    splashWin?.close();
+    splashWin = null;
+    win?.show();
+  });
+});
 
 ipcMain.on("window:close", () => {
   win?.close();
